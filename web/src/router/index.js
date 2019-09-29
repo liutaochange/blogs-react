@@ -1,22 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
-import { connect } from 'react-redux'
-import Main from './main'
+import Main from './web'
 
-class App extends Component {
-    render() {
-        return (
-            <Router>
-                <Main />
-            </Router>
-        );
-    }
-}
+const App = () => (
+    <Router>
+        <Main />
+    </Router>
+)
 
-let mapStateToProps = state => {
-    let { loading } = state.common
-    return {
-        loading
-    }
-}
-export default connect(mapStateToProps)(App);
+export default App
