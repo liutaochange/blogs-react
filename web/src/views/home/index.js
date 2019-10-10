@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import API from '@/services/index'
+import API from '@/services'
 const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
@@ -11,7 +11,7 @@ const Home = () => {
       console.log(res)
     }
     fetchData()
-  })
+  }, [])
   return <div>我是首页</div>
 }
 export default Home
