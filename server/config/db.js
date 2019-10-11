@@ -13,7 +13,8 @@ const options = {
   },
   define: {
     freezeTableName: true // 表名后缀默认不加复数形式
-  }
+  },
+  timezone: '+08:00'
 }
 module.exports = {
   database,
