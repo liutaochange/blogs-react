@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { BASE_URL } from '@/config/interface'
+import { BASE_URL } from '@/services/interface'
 import { USER_TOKEN_KEY } from '@/config/index'
 import { message } from 'antd'
 
@@ -9,7 +9,7 @@ axios.interceptors.request.use(
   config => {
     let token = window.localStorage.getItem(USER_TOKEN_KEY)
     if (token) {
-      config.headers.Authorization = 'Bearer ' + token
+      config.headers.Authorization = 'Blog ' + token
     }
     return config
   },

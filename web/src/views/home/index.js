@@ -1,17 +1,11 @@
 import React, { useEffect } from 'react'
-import API from '@/services'
+import { useDispatch } from 'react-redux'
+import { setDataAction } from '@/store/user/action'
 const Home = () => {
+  const dispatch = useDispatch()
   useEffect(() => {
-    const fetchData = async () => {
-      let res = await API.register({
-        username: 'java',
-        password: '123456',
-        name: 'web'
-      })
-      console.log(res)
-    }
-    fetchData()
-  }, [])
+    dispatch(setDataAction())
+  }, [dispatch])
   return <div>我是首页</div>
 }
 export default Home
