@@ -8,6 +8,7 @@ const UserHead = () => {
   const [loginShow, setLoginShow] = useState(false)
   const [registerShow, setRegisterShow] = useState(false)
   const [updateUserInfoShow, setUpdateUserInfoShow] = useState(false)
+  const dispatch = useDispatch()
   const changeLoginModalShow = () => {
     setLoginShow(!loginShow)
   }
@@ -18,7 +19,6 @@ const UserHead = () => {
     setUpdateUserInfoShow(!updateUserInfoShow)
   }
   const logout = () => {
-    const dispatch = useDispatch()
     dispatch(logoutAction())
   }
   const userMenu = (
@@ -76,14 +76,14 @@ const UserHead = () => {
               </Avatar>
             )}
           </Dropdown>
-          {updateUserInfoShow && (
+          {/* {updateUserInfoShow && (
             <UpdateUserModal
               isShow={updateUserInfoShow}
               onCancel={() => {
                 changeUpdateUserInfoModalShow()
               }}
             />
-          )}
+          )} */}
         </Fragment>
       ) : (
         <Fragment>
@@ -92,7 +92,7 @@ const UserHead = () => {
               <Icon type="user" />
             </Avatar>
           </Dropdown>
-          {loginShow && (
+          {/* {loginShow && (
             <LoginModal
               isShow={loginShow}
               onCancel={() => {
@@ -107,7 +107,7 @@ const UserHead = () => {
                 changeRegisterModalShow()
               }}
             />
-          )}
+          )} */}
         </Fragment>
       )}
     </div>

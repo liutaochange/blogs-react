@@ -1,13 +1,13 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Input } from 'antd'
 import { useDispatch } from 'react-redux'
 import { withRouter } from 'react-router-dom'
-import { getArticleList } from '@/store/article/action'
+// import { getArticleList } from '@/store/article/action'
 const Search = props => {
+  const dispatch = useDispatch()
   const onSearch = value => {
     const { history } = props
-    const dispatch = useDispatch()
-    dispatch(getArticleList({ keyword: value }))
+    // dispatch(getArticleList({ keyword: value }))
     history.push({
       pathname: '/article',
       search: 'keyword=' + value
@@ -27,7 +27,7 @@ const Search = props => {
       <Input.Search
         placeholder="搜索文章"
         onSearch={() => {
-          onSearch
+          onSearch()
         }}
         defaultValue={() => {
           getKeyWord()

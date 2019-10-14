@@ -34,16 +34,13 @@ const Nav = props => {
     setCurrentKey(key)
   }
   useEffect(() => {
-    changeSelectNavHandle(pathname)
-  }, [pathname])
-  const changeSelectNavHandle = pathname => {
     let include = navData.find(item => item.pathname === pathname)
     if (!include) {
       changeSelectNav({ key: '' })
     } else {
       changeSelectNav({ key: pathname })
     }
-  }
+  }, [pathname])
   return (
     <div className="nav">
       <Menu

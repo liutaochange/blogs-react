@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { Row, Col, BackTop } from 'antd'
 import Loading from '@/components/common/loading'
 import NotFound from '@/views/404'
-
+import Header from '@/components/header/index'
+import Sider from '@/components/sider/index'
 const Home = lazy(() => import(/* webpackChunkName: "home" */ '@/views/home'))
 const Archive = lazy(() =>
   import(/* webpackChunkName: "archive" */ '@/views/archive')
@@ -72,8 +73,11 @@ const config = [
 const App = () => (
   <Router>
     <div className="web-root">
+      <Header></Header>
       <Row>
-        <Col span={5} className="slider-box"></Col>
+        <Col span={5} className="slider-box">
+          <Sider></Sider>
+        </Col>
         <Col span={19} className="content-box">
           <div
             id="main-body"
