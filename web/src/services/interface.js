@@ -6,5 +6,16 @@ const LOGIN = '/user/login'
 const LOGOUT = '/user/logout'
 // 分类
 const GET_CATEGORIES_URL = '/category/list'
+// 文章
+const GET_ARTICLES_URL = '/article/list'
+const GET_ARTICLE_DETAIL_URL = '/article/detail'
 
-export { BASE_URL, REGISTER, LOGIN, LOGOUT, GET_CATEGORIES_URL }
+export {
+  BASE_URL,
+  REGISTER,
+  LOGIN,
+  LOGOUT,
+  GET_CATEGORIES_URL,
+  GET_ARTICLES_URL,
+  GET_ARTICLE_DETAIL_URL
+}
