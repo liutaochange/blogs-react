@@ -1,8 +1,9 @@
-import { INITDATA, SETDATA } from '../actionType'
+import { INITDATA, SETUSER } from '../actionType'
 export const initDataAction = data => ({
   type: INITDATA,
   data
 })
-export const setDataAction = () => ({
-  type: SETDATA
+export const setUserAction = data => ({
+  type: SETUSER,
+  data
 })
