@@ -1,4 +1,1 @@
-import * as USER from './user'
-export default {
-  ...USER
-}
+export * from './user'

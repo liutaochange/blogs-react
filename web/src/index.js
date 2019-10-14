@@ -4,6 +4,7 @@ import App from './router/index'
 import * as serviceWorker from './serviceWorker'
 import { Provider } from 'react-redux'
 import Store from './store/index'
+import 'antd/dist/antd.css'
 ReactDOM.render(
   <Provider store={Store}>
     <App />

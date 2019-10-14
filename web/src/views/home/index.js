@@ -3,15 +3,22 @@ import { useDispatch, useSelector } from 'react-redux'
 // import { setDataAction } from '@/store/user/action'
 const Home = () => {
   const dispatch = useDispatch()
-  const { count, user } = useSelector(state => state.user)
+  const { username, name } = useSelector(state => state.user)
   useEffect(() => {
-    console.log('test')
-    dispatch({ type: '__SETDATA__' })
-    dispatch({ type: '__SETUSER__' })
+    // 注册
+    // dispatch({ type: 'AsyncUserRegister', data: {
+    //   username: 'java', password: '123456', name: 'php'
+    // } })
+
+    // 登录
+    dispatch({ type: 'AsyncUserLogin', data: {
+      username: 'java', password: '123456', type: ''
+    } })
+
   }, [dispatch])
   return (
     <div>
-      我是首页{count}--{user}
+      我是首页{username}--{name}
     </div>
   )
 }

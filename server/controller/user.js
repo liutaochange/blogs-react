@@ -1,7 +1,8 @@
 const { userModel } = require('../model/index')
 const Sequelize = require('sequelize')
 const Op = Sequelize.Op
-
+const { passwordHash, passwordCompare } = require('../lib/bcrypt')
+const { createToken, getUserInfo } = require('../lib/token')
 class userController {
   // 校验用户名是否已经注册，密码加密处理
   static async register(ctx) {
@@ -14,15 +15,23 @@ class userController {
         message: '此用户名已注册过'
       }
     } else {
+      let bcryptPassword = await passwordHash(password) // 密码加密
       let response = await userModel.create({
         username,
         name,
-        password: password
+        password: bcryptPassword
       })
       if (response) {
+        let User = await userModel.findOne({ where: { username } })
+        let token = await createToken({
+          id: User.id,
+          username: User.username,
+          auth: User.auth
+        })
         ctx.body = {
           status: 1,
-          message: '注册成功'
+          message: '注册成功',
+          response: { id: User.id, username, name, token }
         }
       } else {
         ctx.body = {
@@ -43,10 +52,10 @@ class userController {
     }
     let response = await userModel.findOne({ where })
     if (response) {
-      let isSame = password === response.password // 校验密码是否正确
+      let isSame = await passwordCompare(password, response.password) // 校验密码是否正确
       if (isSame) {
-        let { id, username, name } = response
-        let token = 'usertoken'
+        let { id, username, name, auth } = response
+        let token = await createToken({ id, username, auth })
         ctx.body = {
           status: 1,
           message: '登录成功',

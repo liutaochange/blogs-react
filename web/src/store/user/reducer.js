@@ -1,19 +1,37 @@
-import { INITDATA, SETUSER } from '../actionType'
-const initCount = {
-  count: 0,
-  user: 0
-}
-function User(state = initCount, action) {
+import {
+  LOGIN,
+  LOGOUT,
+  REGISTER,
+  UPDATE_USER,
+  GET_USER_INFO
+} from '../actionType'
+import initState from './state'
+function User(state = initState, action) {
   switch (action.type) {
-    case INITDATA:
+    case LOGIN:
       return {
         ...state,
-        count: action.data.count
+        ...action.payload
       }
-    case SETUSER:
+    case LOGOUT:
       return {
         ...state,
-        user: action.data.user
+        ...action.payload
+      }
+    case REGISTER:
+      return {
+        ...state,
+        ...action.payload
+      }
+    case UPDATE_USER:
+      return {
+        ...state,
+        ...action.payload
+      }
+    case GET_USER_INFO:
+      return {
+        ...state,
+        ...action.payload
       }
     default:
       return state
