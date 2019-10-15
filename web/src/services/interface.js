@@ -4,6 +4,7 @@ const BASE_URL =
 const REGISTER = '/user/register'
 const LOGIN = '/user/login'
 const LOGOUT = '/user/logout'
+const UPDATE = '/user/update'
 // 分类
 const GET_CATEGORIES_URL = '/category/list'
 // 文章
@@ -22,6 +23,7 @@ export {
   REGISTER,
   LOGIN,
   LOGOUT,
+  UPDATE,
   GET_CATEGORIES_URL,
   GET_ARTICLES_URL,
   GET_ARTICLE_DETAIL_URL,
