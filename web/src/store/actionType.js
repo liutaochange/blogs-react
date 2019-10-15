@@ -8,10 +8,10 @@ export const REGISTER = 'REGISTER'
 export const UPDATE_USER = 'UPDATE_USER'
 export const GET_USER_INFO = 'GET_USER_INFO'
 
+// 文章模块
+export const GET_ARTICLE_LIST = 'GET_ARTICLE_LIST'
+export const GET_NEW_THREE_ARTICLES = 'GET_ARTICLE_LIST'
 
-
-// export const GET_ARTICLE_LIST = 'GET_ARTICLE_LIST'
-// export const GET_NEW_THREE_ARTICLES = 'GET_NEW_THREE_ARTICLES'
 // export const EMPTY_ARTICLE_LIST = 'EMPTY_ARTICLE_LIST'
 // export const GET_TAG_LIST = 'GET_TAG_LIST'
 // export const GET_CATEGORY_LIST = 'GET_CATEGORY_LIST'
