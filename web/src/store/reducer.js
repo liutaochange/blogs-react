@@ -1,19 +1,17 @@
 import { combineReducers } from 'redux'
-import { UPDATE_LOADING } from './actionType'
 import user from './user/reducer'
-const commonState = {
-  loading: false
-}
-// common
-const common = (state = commonState, { type, payload }) => {
-  switch (type) {
-    case UPDATE_LOADING:
-      return { ...payload }
-    default:
-      return state
-  }
-}
+import tag from './tag/reducer'
+import common from './common/reducer'
+import article from './article/reducer'
+import category from './category/reducer'
+import comment from './comment/reducer'
+import reply from './reply/reducer'
 export default combineReducers({
   common,
-  user
+  user,
+  tag,
+  article,
+  category,
+  comment,
+  reply
 })

@@ -15,7 +15,6 @@ function* userLogin({ data, callback }) {
       message.success('登录成功')
       const action = loginAction(res.response)
       yield put(action)
-
     }
   } catch (error) {
     callback()

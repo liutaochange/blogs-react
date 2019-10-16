@@ -12,15 +12,24 @@ export const GET_USER_INFO = 'GET_USER_INFO'
 export const GET_ARTICLE_LIST = 'GET_ARTICLE_LIST'
 export const GET_NEW_THREE_ARTICLES = 'GET_ARTICLE_LIST'
 
+// 分类部分
+export const GET_CATEGORY_LIST = 'GET_CATEGORY_LIST'
+
+// 标签
+export const GET_TAG_LIST = 'GET_TAG_LIST'
+
+// 评论
+export const COMMENT_ADD = 'COMMENT_ADD'
+export const GET_COMMENTS = 'GET_COMMENTS'
+
+// 回复
+export const REPLY_ADD = 'REPLY_ADD'
+
+
 // export const EMPTY_ARTICLE_LIST = 'EMPTY_ARTICLE_LIST'
-// export const GET_TAG_LIST = 'GET_TAG_LIST'
-// export const GET_CATEGORY_LIST = 'GET_CATEGORY_LIST'
+
 // export const EMPTY_CATEGORY_LIST = 'EMPTY_CATEGORY_LIST'
 
-// export const COMMENT_ADD = 'COMMENT_ADD'
-// export const COMMENT_DEL = 'COMMENT_DEL'
-// export const GET_COMMENTS = 'GET_COMMENTS'
-// export const REPLY_ADD = 'REPLY_ADD'
 // export const REPLY_DEL = 'REPLY_DEL'
 // export const DEL_ARTICLE = 'DEL_ARTICLE'
 // export const GET_USER_LIST = 'GET_USER_LIST'

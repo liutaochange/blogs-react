@@ -1,4 +1,4 @@
-const state = {
+export default {
   articleListData: {
     // 文章列表数据
     articleList: [],
@@ -11,5 +11,3 @@ const state = {
   },
   newThreeArticles: [] // 最新的三篇文章数据
 }
-
-export default state

@@ -4,7 +4,7 @@ import { Divider } from 'antd'
 import { withRouter } from 'react-router-dom'
 import ArticleInfo from '../articleInfo'
 import './index.less'
-const ArticleList = () => {
+const ArticleList = props => {
   let { data, history } = props
   return (
     <ul className="article-list">

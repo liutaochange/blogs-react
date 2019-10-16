@@ -6,32 +6,32 @@ import {
   GET_USER_INFO
 } from '../actionType'
 import initState from './state'
-function User(state = initState, action) {
-  switch (action.type) {
+function User(state = initState, { type, data }) {
+  switch (type) {
     case LOGIN:
       return {
         ...state,
-        ...action.payload
+        data
       }
     case LOGOUT:
       return {
         ...state,
-        ...action.payload
+        data
       }
     case REGISTER:
       return {
         ...state,
-        ...action.payload
+        data
       }
     case UPDATE_USER:
       return {
         ...state,
-        ...action.payload
+        data
       }
     case GET_USER_INFO:
       return {
         ...state,
-        ...action.payload
+        data
       }
     default:
       return state

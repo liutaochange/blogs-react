@@ -4,19 +4,19 @@ import {
   REGISTER,
   UPDATE_USER,
 } from '../actionType'
-export const loginAction = payload => ({
+export const loginAction = data => ({
   type: LOGIN,
-  payload
+  data
 })
-export const logoutAction = payload => ({
+export const logoutAction = data => ({
   type: LOGOUT,
-  payload
+  data
 })
-export const registerAction = payload => ({
+export const registerAction = data => ({
   type: REGISTER,
-  payload
+  data
 })
-export const updateUserAction = payload => ({
+export const updateUserAction = data => ({
   type: UPDATE_USER,
-  payload
+  data
 })

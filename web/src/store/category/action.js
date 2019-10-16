@@ -1,7 +1,7 @@
 import {
   GET_CATEGORY_LIST,
-} from '@/store/actionType'
-export const getCategoryList = payload => ({
+} from '../actionType'
+export const getCategoryList = data => ({
   type: GET_CATEGORY_LIST,
-  payload
+  data
 })

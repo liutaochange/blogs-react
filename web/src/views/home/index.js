@@ -28,8 +28,10 @@ const Home = props => {
   }
   useEffect(() => {
     let { search } = props.location
+    console.log(search)
     let params = search.substring(1)
-    dispatch(params)
+    console.log(params)
+    // dispatch(params)
   }, [])
   const { articleList, pager } = useSelector(
     state => state.article.articleListData

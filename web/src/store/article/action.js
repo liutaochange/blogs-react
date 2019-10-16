@@ -1,11 +1,11 @@
 import { GET_ARTICLE_LIST } from '@/store/actionType'
 
-export const getArticleListAction = payload => ({
+export const getArticleListAction = data => ({
   type: GET_ARTICLE_LIST,
-  payload
+  data
 })
 
-export const getNewThreeAction = payload => ({
+export const getNewThreeAction = data => ({
   type: GET_NEW_THREE_ARTICLES,
-  payload
+  data
 })

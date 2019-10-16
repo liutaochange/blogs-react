@@ -1,11 +1,9 @@
-import state from './state'
+import initState from './state'
 import { GET_CATEGORY_LIST } from '../actionType'
-const initState = state
-
-const category = (state = initState, { type, payload }) => {
+const category = (state = initState, { type, data }) => {
   switch (type) {
     case GET_CATEGORY_LIST:
-      return { ...state, categoryList: payload }
+      return { ...state, categoryList: data }
     default:
       return state
   }
