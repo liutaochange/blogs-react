@@ -13,7 +13,7 @@ const Tags = () => {
     <div className="tags-container">
       <Divider orientation="left">标签</Divider>
       <div className="tags">
-        {tagList.map((tag, key) => (
+        {tagList && tagList.map((tag, key) => (
           <Link
             to={{
               pathname: '/tag/' + tag.name,

@@ -5,7 +5,7 @@ const BloggerInfor = () => {
   return (
     <div className="blogger-infor">
       <Avatar size={110} src={img} />
-      <h2 className="name">黄老邪</h2>
+      <h2 className="name">东邪</h2>
       <p className="introduction">梦想做全栈</p>
       <Row>
         <Col span={24}>

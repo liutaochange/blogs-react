@@ -1,4 +1,4 @@
-import { GET_ARTICLE_LIST } from '@/store/actionType'
+import { GET_ARTICLE_LIST, GET_NEW_THREE_ARTICLES } from '../actionType'
 
 export const getArticleListAction = data => ({
   type: GET_ARTICLE_LIST,
