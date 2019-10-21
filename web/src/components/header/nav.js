@@ -47,8 +47,8 @@ const Nav = props => {
         mode="horizontal"
         className="nav-ul"
         selectedKeys={[currentKey]}
-        onClick={() => {
-          changeSelectNav()
+        onClick={(e) => {
+          changeSelectNav(e)
         }}
         overflowedIndicator={<Icon type="menu" />}
       >
