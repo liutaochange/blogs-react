@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react'
 import { Pagination, Empty } from 'antd'
 import { useSelector, useDispatch } from 'react-redux'
-import { getArticleList } from '@/store/article/action'
 import TplOne from './tplOne'
 import TplTwo from './tplTwo'
 import './index.less'
@@ -24,20 +23,21 @@ const Archive = props => {
     let { location } = props
     let state = location.state || {}
     let { tagName, categoryName } = state
-    dispatch(
-      getArticleList({
+    dispatch({
+      type: 'AsyncArticleList',
+      data: {
         tagName,
         categoryName,
         attributes: 'id,title,createdAt',
         ...params
-      })
-    )
+      }
+    })
   }
   const onChange = currentPage => {
     getArticles({ currentPage })
   }
 
-  let { articleList, pager, location, loading } = props
+  let { location } = props
   let { currentPage, pageSize, total } = pager
   let { pathname } = location
   let Tpl = () =>
@@ -56,7 +56,7 @@ const Archive = props => {
             current={currentPage}
             pageSize={pageSize}
             total={total}
-            onChange={this.onChange}
+            onChange={onChange}
           />
         </Fragment>
       ) : (

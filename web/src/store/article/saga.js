@@ -7,10 +7,17 @@ function* getArticleList({ data }) {
     if (res.status === 1) {
       const action = getArticleListAction(res.response)
       yield put(action)
-      if (res.response.length >= 3) {
-        const threeAction = getNewThreeAction(res.response)
-        yield put(threeAction)
-      }
+    }
+  } catch (error) {
+    console.log(error)
+  }
+}
+function* getNewThreeList({ data }) {
+  try {
+    const res = yield call(get_article, data)
+    if (res.status === 1) {
+      const threeAction = getNewThreeAction(res.response)
+      yield put(threeAction)
     }
   } catch (error) {
     console.log(error)
@@ -30,5 +37,6 @@ function* getArticleDetail({ data }) {
 
 export default function* articleSagas() {
   yield takeEvery('AsyncArticleList', getArticleList)
+  yield takeEvery('AsyncArticleThree', getNewThreeList)
   yield takeEvery('AsyncArticleDetail', getArticleDetail)
 }
