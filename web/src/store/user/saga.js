@@ -3,7 +3,7 @@ import {
   loginAction,
   logoutAction,
   registerAction,
-  updateUserAction,
+  updateUserAction
 } from './action'
 import { login, register, logout, update } from '@/services/index'
 import { message } from 'antd'
@@ -49,8 +49,23 @@ function* userUpdate({ data, callback }) {
     console.log(error)
   }
 }
+function* userLogout({ data, callback }) {
+  try {
+    const res = yield call(logout, data)
+    if (res.status === 1) {
+      callback()
+      message.success('已退出')
+      const action = logoutAction(res.response)
+      yield put(action)
+    }
+  } catch (error) {
+    callback()
+    console.log(error)
+  }
+}
 export default function* userSagas() {
   yield takeEvery('AsyncUserLogin', userLogin)
   yield takeEvery('AsyncUserRegister', userRegister)
   yield takeEvery('AsyncUserUpdate', userUpdate)
+  yield takeEvery('AsyncUserLogout', userLogout)
 }

@@ -25,7 +25,6 @@ export const GET_COMMENTS = 'GET_COMMENTS'
 // 回复
 export const REPLY_ADD = 'REPLY_ADD'
 
-
 // export const EMPTY_ARTICLE_LIST = 'EMPTY_ARTICLE_LIST'
 
 // export const EMPTY_CATEGORY_LIST = 'EMPTY_CATEGORY_LIST'

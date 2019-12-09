@@ -47,12 +47,12 @@ const Nav = props => {
         mode="horizontal"
         className="nav-ul"
         selectedKeys={[currentKey]}
-        onClick={(e) => {
+        onClick={e => {
           changeSelectNav(e)
         }}
         overflowedIndicator={<Icon type="menu" />}
       >
-        {navData.map((nav, key) => (
+        {navData.map(nav => (
           <Menu.Item key={nav.key} className="item">
             <Link to={nav.pathname}>
               <Icon type={nav.icon} />

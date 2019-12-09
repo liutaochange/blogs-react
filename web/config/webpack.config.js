@@ -197,6 +197,7 @@ module.exports = function(webpackEnv) {
     },
     optimization: {
       minimize: isEnvProduction,
+      namedChunks: true,
       minimizer: [
         // This is only used in production mode
         new TerserPlugin({
@@ -264,8 +265,21 @@ module.exports = function(webpackEnv) {
       // https://twitter.com/wSokra/status/969633336732905474
       // https://medium.com/webpack/webpack-4-code-splitting-chunk-graph-and-the-splitchunks-optimization-be739a861366
       splitChunks: {
-        chunks: 'all',
-        name: false
+        chunks: 'async',
+        name: true,
+        cacheGroups: {
+          common: {
+            test: /[\\/]src[\\/](base|store|services|assets|config|router)[\\/]/,
+            name: 'common',
+            chunks: 'initial',
+            reuseExistingChunk: true
+          },
+          vendor: {
+            test: /[\\/]node_modules[\\/]/,
+            name: 'vendor',
+            chunks: 'all'
+          }
+        }
       },
       // Keep the runtime chunk separated to enable long term caching
       // https://twitter.com/wSokra/status/969679223278505985
@@ -445,7 +459,7 @@ module.exports = function(webpackEnv) {
                 sourceMap: isEnvProduction && shouldUseSourceMap,
                 modules: true,
                 getLocalIdent: getCSSModuleLocalIdent
-              }),
+              })
             },
             // Opt-in support for SASS (using .scss or .sass extensions).
             // By default we support SASS Modules with the
@@ -466,7 +480,7 @@ module.exports = function(webpackEnv) {
               // See https://github.com/webpack/webpack/issues/6571
               sideEffects: true
             },
-             // Opt-in support for less (using .less extensions).
+            // Opt-in support for less (using .less extensions).
             // By default we support less Modules with the
             // extensions .module.less
             {

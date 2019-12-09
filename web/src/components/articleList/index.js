@@ -19,9 +19,7 @@ const ArticleList = props => {
         >
           <Divider orientation="left" className="header">
             <span className="title">{item.title}</span>
-            <span className="createdAt">
-              {item.createTime}
-            </span>
+            <span className="createdAt">{item.createTime}</span>
           </Divider>
           {/* <div
             className="content markdown-content"
